@@ -1,9 +1,26 @@
 package com.exallium.h5.api;
 
-import com.exallium.h5.api.models.metadata.*;
+import com.exallium.h5.api.models.metadata.CSRDesignation;
+import com.exallium.h5.api.models.metadata.CampaignMission;
+import com.exallium.h5.api.models.metadata.Commendation;
+import com.exallium.h5.api.models.metadata.Enemy;
+import com.exallium.h5.api.models.metadata.FlexibleStat;
+import com.exallium.h5.api.models.metadata.GameBaseVariant;
+import com.exallium.h5.api.models.metadata.GameVariant;
+import com.exallium.h5.api.models.metadata.Map;
+import com.exallium.h5.api.models.metadata.MapVariant;
+import com.exallium.h5.api.models.metadata.Medal;
+import com.exallium.h5.api.models.metadata.Playlist;
+import com.exallium.h5.api.models.metadata.Requisition;
+import com.exallium.h5.api.models.metadata.RequisitionPack;
+import com.exallium.h5.api.models.metadata.Skull;
+import com.exallium.h5.api.models.metadata.SpartanRank;
+import com.exallium.h5.api.models.metadata.TeamColor;
+import com.exallium.h5.api.models.metadata.Vehicle;
+import com.exallium.h5.api.models.metadata.Weapon;
+import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Path;
-import rx.Observable;
 
 import java.util.List;
 
@@ -16,13 +33,13 @@ public interface Metadata {
      * ordering.
      */
     @GET(PATH_PREFIX + "campaign-missions")
-    Observable<List<CampaignMission>> getCampaignMissions();
+    Call<List<CampaignMission>> getCampaignMissions();
 
     /**
      * @return A list of commendations for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "commendations")
-    Observable<List<Commendation>> getCommendations();
+    Call<List<Commendation>> getCommendations();
 
     /**
      * A list of CSR designations for the title. CSR stands for Competitive Skill Rank. CSR
@@ -35,20 +52,20 @@ public interface Metadata {
      * the Service Record stats for that player. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "csr-designations")
-    Observable<List<CSRDesignation>> getCSRDesignations();
+    Call<List<CSRDesignation>> getCSRDesignations();
 
     /**
      * @return A list of enemies for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "enemies")
-    Observable<List<Enemy>> getEnemies();
+    Call<List<Enemy>> getEnemies();
 
     /**
      * @return A list of defined flexible stat entries for the title. There is no significance to the
      * ordering.
      */
     @GET(PATH_PREFIX + "flexible-stats")
-    Observable<List<FlexibleStat>> getFlexibleStats();
+    Call<List<FlexibleStat>> getFlexibleStats();
 
     /**
      * @return A list of game base variants for the title. There is no mechanism to determine which
@@ -57,39 +74,39 @@ public interface Metadata {
      * player.There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "game-base-variants")
-    Observable<List<GameBaseVariant>> getGameBaseVariants();
+    Call<List<GameBaseVariant>> getGameBaseVariants();
 
     /**
      * @return A list of game variants for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "game-variants")
-    Observable<List<GameVariant>> getGameVariants();
+    Call<List<GameVariant>> getGameVariants();
 
     /**
      * @return A list of impulses (essentially invisible medals) for the title. There is no
      * significance to the ordering.
      */
     @GET(PATH_PREFIX + "impulses")
-    Observable<List<GameVariant>> getImpulses();
+    Call<List<GameVariant>> getImpulses();
 
     /**
      * @param id Unique Map Variant ID
      * @return A given map variant
      */
     @GET(PATH_PREFIX + "map-variants/{id}")
-    Observable<MapVariant> getMapVariant(@Path("id") String id);
+    Call<MapVariant> getMapVariant(@Path("id") String id);
 
     /**
      * @return A list of maps for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "maps")
-    Observable<List<Map>> getMaps();
+    Call<List<Map>> getMaps();
 
     /**
      * @return A list of medals for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "medals")
-    Observable<List<Medal>> getMedals();
+    Call<List<Medal>> getMedals();
 
     /**
      * @return A list of playlists for the title. To determine which playlists a specific player has
@@ -97,49 +114,49 @@ public interface Metadata {
      * to the ordering.
      */
     @GET(PATH_PREFIX + "playlists")
-    Observable<List<Playlist>> getPlaylists();
+    Call<List<Playlist>> getPlaylists();
 
     /**
      * @return A list of requisition packs for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "requisition-packs")
-    Observable<List<RequisitionPack>> getRequisitionPacks();
+    Call<List<RequisitionPack>> getRequisitionPacks();
 
     /**
      * @param id An ID that uniquely identifies a Requisition.
      * @return A list of requisitions for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "requisitions/{id}")
-    Observable<List<Requisition>> getRequisitions(@Path("id") String id);
+    Call<List<Requisition>> getRequisitions(@Path("id") String id);
 
     /**
      * @return A list of skulls for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "skulls")
-    Observable<List<Skull>> getSkulls();
+    Call<List<Skull>> getSkulls();
 
     /**
      * @return A list of Spartan Ranks for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "spartan-ranks")
-    Observable<List<SpartanRank>> getSpartanRanks();
+    Call<List<SpartanRank>> getSpartanRanks();
 
     /**
      * @return A listing of team colors supported in the title. There is no significance to the
      * ordering.
      */
     @GET(PATH_PREFIX + "team-colors")
-    Observable<List<TeamColor>> getTeamColors();
+    Call<List<TeamColor>> getTeamColors();
 
     /**
      * @return A list of vehicles for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "vehicles")
-    Observable<List<Vehicle>> getVehicles();
+    Call<List<Vehicle>> getVehicles();
 
     /**
      * @return A listing of weapons supported in the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "weapons")
-    Observable<List<Weapon>> getWeapons();
+    Call<List<Weapon>> getWeapons();
 }
