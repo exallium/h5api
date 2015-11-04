@@ -42,9 +42,15 @@ android {
     }
 
     buildTypes {
+        String keyPath = getRootDir().getAbsolutePath() + "/secure/apiKey"
         release {
+            resValue "string", "api_key", new File(keyPath).text
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            resValue "string", "api_key", new File(keyPath).text
         }
     }
     sourceSets {
@@ -56,5 +62,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 
     compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    compile project(":lib")
 }
