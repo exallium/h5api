@@ -1,0 +1,4 @@
+rootProject.name = 'h5api'
+include 'lib'
+include 'app'
+
