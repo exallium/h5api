@@ -20,7 +20,7 @@ dependencies {
 sourceSets {
     test {
         resources {
-            srcDir "src/test/res"
+            srcDir "../secure"
         }
     }
 }

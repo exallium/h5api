@@ -6,8 +6,8 @@ WARNING -- Still under heavy development, will be for the forseeable few weeks a
 
 See Unit tests for examples.
 
-## Testing
+## Testing Lib and Running Sample App
 
-In order to test the library, you must put your apiKey into a file called apiKey 
-under lib/src/test/secure.  This will be ignored by git.  If you are not developing
-the library itself, and only using it, then stop trying to test it =)
+In order to test the library or build the sample app, you must put your 
+apiKey into a file called apiKey under secure/.  This will be ignored by 
+git automatically.

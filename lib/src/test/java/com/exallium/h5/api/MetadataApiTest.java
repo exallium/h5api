@@ -19,7 +19,7 @@ public class MetadataApiTest {
 
     @BeforeClass
     public static void setUpClass() {
-        URL url = MetadataApiTest.class.getResource("/secure/apiKey");
+        URL url = MetadataApiTest.class.getResource("/apiKey");
         File apiFile = new File(url.getFile());
         try {
             FileInputStream inputStream = new FileInputStream(apiFile);
