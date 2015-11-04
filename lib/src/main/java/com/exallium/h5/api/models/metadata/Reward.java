@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Reward {
@@ -14,5 +16,18 @@ public class Reward {
     private String id;
 
     // Internal Use only. Do Not Use.
+    @JsonProperty("contentId")
     private String contentId;
+
+    public int getXp() {
+        return xp;
+    }
+
+    public List<RequisitionPack> getRequisitionPacks() {
+        return requisitionPacks;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

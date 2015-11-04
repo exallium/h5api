@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class GameBaseVariant {
@@ -37,7 +39,26 @@ public class GameBaseVariant {
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
 
+    public String getName() {
+        return name;
+    }
 
+    public String getInternalName() {
+        return internalName;
+    }
+
+    public String getIconUrl() {
+        return iconUrl;
+    }
+
+    public List<String> getSupportedGameModes() {
+        return supportedGameModes;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

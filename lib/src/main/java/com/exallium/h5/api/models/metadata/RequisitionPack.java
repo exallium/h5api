@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class RequisitionPack {
     /**
      * A localized name for the pack, suitable for display to users. The text
@@ -30,11 +32,13 @@ public class RequisitionPack {
     /**
      * Internal use. Whether the item should be featured ahead of others.
      */
+    @JsonProperty("isFeatured")
     private boolean isFeatured;
 
     /**
      * Internal use. Whether the item should be labeled as "new!"
      */
+    @JsonProperty("isNew")
     private boolean isNew;
 
     /**
@@ -48,12 +52,14 @@ public class RequisitionPack {
      * If the pack is currently available for purchase by spending credits,
      * then this value is true.
      */
+    @JsonProperty("isPurchasableWithCredits")
     private boolean isPurchasableWithCredits;
 
     /**
      * If the pack might be obtainable through the Xbox Live Marketplace, then
      * this value is true.
      */
+    @JsonProperty("isPurchasableFromMarketplace")
     private boolean isPurchasableFromMarketplace;
 
     /**
@@ -101,5 +107,66 @@ public class RequisitionPack {
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getLargeImageUrl() {
+        return largeImageUrl;
+    }
+
+    public String getMediumImageUrl() {
+        return mediumImageUrl;
+    }
+
+    public String getSmallImageUrl() {
+        return smallImageUrl;
+    }
+
+    public boolean isFeatured() {
+        return isFeatured;
+    }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public int getCreditPrice() {
+        return creditPrice;
+    }
+
+    public boolean isPurchasableWithCredits() {
+        return isPurchasableWithCredits;
+    }
+
+    public boolean isPurchasableFromMarketplace() {
+        return isPurchasableFromMarketplace;
+    }
+
+    public String getXboxMarketplaceProductId() {
+        return xboxMarketplaceProductId;
+    }
+
+    public String getXboxMarketplaceProductUrl() {
+        return xboxMarketplaceProductUrl;
+    }
+
+    public int getMerchandisingOrder() {
+        return merchandisingOrder;
+    }
+
+    public String getFlair() {
+        return flair;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

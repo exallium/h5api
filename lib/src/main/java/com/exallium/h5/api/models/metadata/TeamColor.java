@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class TeamColor {
     /**
      * A localized name, suitable for display to users.
@@ -27,10 +29,31 @@ public class TeamColor {
      * The ID that uniquely identifies this color. This will be the same as the team's ID
      * in responses from the Stats API.
      */
-    private int id;
+    private long id;
 
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getIconUrl() {
+        return iconUrl;
+    }
+
+    public long getId() {
+        return id;
+    }
 }

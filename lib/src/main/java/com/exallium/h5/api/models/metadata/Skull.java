@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Skull {
 
     /**
@@ -19,12 +21,38 @@ public class Skull {
     private String missionId;
 
     /**
+     * URL Path for Skull
+     */
+    private String imageUrl;
+
+    /**
      * The ID that uniquely identifies this skull.
      */
-    private int id;
+    private long id;
 
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getMissionId() {
+        return missionId;
+    }
+
+    public long getId() {
+        return id;
+    }
 }

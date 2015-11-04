@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Playlist {
     /**
      * A localized name for the playlist, suitable for display to users. The text is
@@ -16,6 +18,7 @@ public class Playlist {
      * Indicates if a CSR (competitive skill rank) is shown for players who participate
      * in this playlist.
      */
+    @JsonProperty("isRanked")
     private boolean isRanked;
 
     /**
@@ -35,6 +38,7 @@ public class Playlist {
     /**
      * Indicates if this playlist is currently available for play.
      */
+    @JsonProperty("isActive")
     private boolean isActive;
 
     /**
@@ -45,5 +49,34 @@ public class Playlist {
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public boolean isRanked() {
+        return isRanked;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getGameMode() {
+        return gameMode;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

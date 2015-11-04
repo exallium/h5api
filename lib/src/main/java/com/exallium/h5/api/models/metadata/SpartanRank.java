@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class SpartanRank {
 
     /**
@@ -15,10 +17,23 @@ public class SpartanRank {
     /**
      * The ID that uniquely identifies this Spartan Rank.
      */
-    private int id;
+    private long id;
 
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public int getStartXp() {
+        return startXp;
+    }
+
+    public Reward getReward() {
+        return reward;
+    }
+
+    public long getId() {
+        return id;
+    }
 }

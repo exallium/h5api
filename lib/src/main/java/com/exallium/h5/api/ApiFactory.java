@@ -24,6 +24,7 @@ public class ApiFactory {
             Request newRequest = request.newBuilder()
                     .addHeader("Ocp-Apim-Subscription-Key", apiKey)
                     .build();
+            System.out.println(newRequest.httpUrl());
             return chain.proceed(newRequest);
         }
     }
@@ -32,7 +33,7 @@ public class ApiFactory {
 
     public ApiFactory(String apiKey) {
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://www.haloapi.com")
+                .baseUrl("https://www.haloapi.com")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
         retrofit.client().interceptors().add(new ApiKeyInterceptor(apiKey));

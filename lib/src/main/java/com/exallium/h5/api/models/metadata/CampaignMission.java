@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CampaignMission {
     /**
      * Order of mission in story
@@ -34,5 +36,30 @@ public class CampaignMission {
     /**
      * Internal Use Only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public int getMissionNumber() {
+        return missionNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

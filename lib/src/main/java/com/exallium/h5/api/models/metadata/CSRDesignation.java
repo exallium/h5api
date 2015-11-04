@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class CSRDesignation {
@@ -26,10 +28,27 @@ public class CSRDesignation {
      * 0 indicates the player has an "Unranked" designation. The player must complete
      * additional matches before being assigned an official CSR designation.
      */
-    private int id;
+    private long id;
 
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getBannerImageUrl() {
+        return bannerImageUrl;
+    }
+
+    public List<CSRTier> getTiers() {
+        return tiers;
+    }
+
+    public long getId() {
+        return id;
+    }
 }

@@ -4,7 +4,7 @@ public class SpriteLocation {
     /**
      * A reference to an image that contains all the sprites.
      */
-    private String spriteSheetUrl;
+    private String spriteSheetUri;
 
     /**
      * The X coordinate where the top-left corner of the sprite is located.
@@ -37,4 +37,32 @@ public class SpriteLocation {
      * The height of this sprite (in pixels).
      */
     private int spriteHeight;
+
+    public String getSpriteSheetUri() {
+        return spriteSheetUri;
+    }
+
+    public int getLeft() {
+        return left;
+    }
+
+    public int getTop() {
+        return top;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getSpriteWidth() {
+        return spriteWidth;
+    }
+
+    public int getSpriteHeight() {
+        return spriteHeight;
+    }
 }

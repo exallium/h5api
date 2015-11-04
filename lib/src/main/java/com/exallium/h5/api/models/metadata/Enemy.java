@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Enemy {
 
     /**
@@ -25,22 +27,46 @@ public class Enemy {
      * A reference to a large image for icon use. This may be null if there is no image
      * defined.
      */
-    private String largeIconUrl;
+    private String largeIconImageUrl;
 
     /**
      * A reference to a small image for icon use. This may be null if there is no image
      * defined.
      */
-    private String smallIconUrl;
+    private String smallIconImageUrl;
 
     /**
      * The ID that uniquely identifies this enemy.
      */
-    private int id;
+    private long id;
 
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
 
+    public String getFaction() {
+        return faction;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getLargeIconImageUrl() {
+        return largeIconImageUrl;
+    }
+
+    public String getSmallIconImageUrl() {
+        return smallIconImageUrl;
+    }
+
+    public long getId() {
+        return id;
+    }
 }

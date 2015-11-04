@@ -77,10 +77,11 @@ public interface Metadata {
     Call<List<GameBaseVariant>> getGameBaseVariants();
 
     /**
+     * @param id An id of a specific game variant
      * @return A list of game variants for the title. There is no significance to the ordering.
      */
-    @GET(PATH_PREFIX + "game-variants")
-    Call<List<GameVariant>> getGameVariants();
+    @GET(PATH_PREFIX + "game-variants/{id}")
+    Call<List<GameVariant>> getGameVariants(@Path("id") String id);
 
     /**
      * @return A list of impulses (essentially invisible medals) for the title. There is no
@@ -119,8 +120,8 @@ public interface Metadata {
     /**
      * @return A list of requisition packs for the title. There is no significance to the ordering.
      */
-    @GET(PATH_PREFIX + "requisition-packs")
-    Call<List<RequisitionPack>> getRequisitionPacks();
+    @GET(PATH_PREFIX + "requisition-packs/{id}")
+    Call<List<RequisitionPack>> getRequisitionPacks(@Path("id") String id);
 
     /**
      * @param id An ID that uniquely identifies a Requisition.

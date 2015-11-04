@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Requisition {
@@ -149,6 +151,90 @@ public class Requisition {
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
 
+    public List<String> getSupportedGameModes() {
+        return supportedGameModes;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getRarityType() {
+        return rarityType;
+    }
+
+    public String getRarity() {
+        return rarity;
+    }
+
+    public boolean isMythic() {
+        return isMythic;
+    }
+
+    public boolean isCertification() {
+        return isCertification;
+    }
+
+    public boolean isWearable() {
+        return isWearable;
+    }
+
+    public String getUseType() {
+        return useType;
+    }
+
+    public String getLargeImageUrl() {
+        return largeImageUrl;
+    }
+
+    public String getMediumImageUrl() {
+        return mediumImageUrl;
+    }
+
+    public String getSmallImageUrl() {
+        return smallImageUrl;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public String getInternalCategoryName() {
+        return internalCategoryName;
+    }
+
+    public String getSubcategoryName() {
+        return subcategoryName;
+    }
+
+    public int getSubcategoryOrder() {
+        return subcategoryOrder;
+    }
+
+    public int getSellPrice() {
+        return sellPrice;
+    }
+
+    public int getLevelRequirement() {
+        return levelRequirement;
+    }
+
+    public int getCreditsAwarded() {
+        return creditsAwarded;
+    }
+
+    public String getCertificationRequisitionId() {
+        return certificationRequisitionId;
+    }
+
+    public String getId() {
+        return id;
+    }
 }

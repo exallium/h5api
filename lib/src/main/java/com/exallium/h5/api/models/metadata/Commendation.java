@@ -1,5 +1,7 @@
 package com.exallium.h5.api.models.metadata;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Commendation {
@@ -26,12 +28,25 @@ public class Commendation {
          * The ID that uniquely identifies this commendation level or the level that must
          * be met.
          */
-        private String guid;
+        private String id;
 
         /**
          * Internal use only. Do not use.
          */
+        @JsonProperty("contentId")
         private String contentId;
+
+        public Reward getReward() {
+            return reward;
+        }
+
+        public int getThreshold() {
+            return threshold;
+        }
+
+        public String getId() {
+            return id;
+        }
     }
 
     public static class Category {
@@ -62,7 +77,24 @@ public class Commendation {
         /**
          * Internal use only. Do not use.
          */
+        @JsonProperty("contentId")
         private String contentId;
+
+        public String getName() {
+            return name;
+        }
+
+        public String getIconImageUrl() {
+            return iconImageUrl;
+        }
+
+        public int getOrder() {
+            return order;
+        }
+
+        public String getId() {
+            return id;
+        }
     }
 
     /**
@@ -121,5 +153,46 @@ public class Commendation {
     /**
      * Internal use only. Do not use.
      */
+    @JsonProperty("contentId")
     private String contentId;
+
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getIconImageUrl() {
+        return iconImageUrl;
+    }
+
+    public List<Level> getLevels() {
+        return levels;
+    }
+
+    public List<Level> getRequiredLevels() {
+        return requiredLevels;
+    }
+
+    public Reward getReward() {
+        return reward;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public String getId() {
+        return id;
+    }
 }
