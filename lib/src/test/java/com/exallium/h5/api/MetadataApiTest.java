@@ -1,6 +1,21 @@
 package com.exallium.h5.api;
 
-import com.exallium.h5.api.models.metadata.*;
+import com.exallium.h5.api.models.metadata.CSRDesignation;
+import com.exallium.h5.api.models.metadata.CampaignMission;
+import com.exallium.h5.api.models.metadata.Commendation;
+import com.exallium.h5.api.models.metadata.Enemy;
+import com.exallium.h5.api.models.metadata.FlexibleStat;
+import com.exallium.h5.api.models.metadata.GameBaseVariant;
+import com.exallium.h5.api.models.metadata.GameVariant;
+import com.exallium.h5.api.models.metadata.Map;
+import com.exallium.h5.api.models.metadata.Medal;
+import com.exallium.h5.api.models.metadata.Playlist;
+import com.exallium.h5.api.models.metadata.Skull;
+import com.exallium.h5.api.models.metadata.SpartanRank;
+import com.exallium.h5.api.models.metadata.TeamColor;
+import com.exallium.h5.api.models.metadata.Vehicle;
+import com.exallium.h5.api.models.metadata.Weapon;
+import com.exallium.h5.api.utils.KeyReader;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -8,8 +23,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import retrofit.Response;
 
-import java.io.*;
-import java.net.URL;
+import java.io.IOException;
 import java.util.List;
 
 @RunWith(JUnit4.class)
@@ -19,22 +33,7 @@ public class MetadataApiTest {
 
     @BeforeClass
     public static void setUpClass() {
-        URL url = MetadataApiTest.class.getResource("/apiKey");
-        File apiFile = new File(url.getFile());
-        try {
-            FileInputStream inputStream = new FileInputStream(apiFile);
-            Reader r = new InputStreamReader(inputStream, "UTF-8");
-            StringBuilder sb = new StringBuilder();
-            char[] buf = new char[1024];
-            int amt = r.read(buf);
-            while (amt > 0) {
-                sb.append(buf, 0, amt);
-                amt = r.read(buf);
-            }
-            apiKey = sb.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        apiKey = KeyReader.getApiKey();
     }
 
     @Test
