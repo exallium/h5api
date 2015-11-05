@@ -2,10 +2,7 @@ package com.exallium.h5.api;
 
 import com.exallium.h5.api.models.stats.matches.Match;
 import com.exallium.h5.api.models.stats.matches.Page;
-import com.exallium.h5.api.models.stats.reports.ArenaPlayerStats;
-import com.exallium.h5.api.models.stats.reports.CampaignCarnageReport;
-import com.exallium.h5.api.models.stats.reports.VersusCarnageReport;
-import com.exallium.h5.api.models.stats.reports.WarzonePlayerStats;
+import com.exallium.h5.api.models.stats.reports.*;
 import com.exallium.h5.api.utils.KeyReader;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -23,7 +20,8 @@ import java.util.List;
 public class StatsApiTest {
     private static String apiKey;
 
-    private static final String PLAYER = "creammaded";
+    //private static final String PLAYER = "creammaded";
+    private static final String PLAYER = "Vercobrixx";
     private static final List<String> MODES = Arrays.asList("warzone", "arena");
 
     @BeforeClass
@@ -64,6 +62,15 @@ public class StatsApiTest {
         Match match = getMatchByType(stats, "campaign");
         Response<CampaignCarnageReport> campaignReport = stats.getCampaignCarnageReport(match.getId().getMatchId()).execute();
         Assert.assertEquals(campaignReport.code(), 200);
+    }
+
+    @Test
+    public void testCustomReport() throws IOException {
+        ApiFactory factory = new ApiFactory(apiKey);
+        Stats stats = factory.getStats();
+        Match match = getMatchByType(stats, "custom");
+        Response<VersusCarnageReport<VersusPlayerStats>> customReport = stats.getCustomCarnageReport(match.getId().getMatchId()).execute();
+        Assert.assertEquals(customReport.code(), 200);
     }
 
     private Match getMatchByType(Stats stats, String type) throws IOException {

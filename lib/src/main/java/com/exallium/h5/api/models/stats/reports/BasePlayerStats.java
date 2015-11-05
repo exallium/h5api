@@ -246,13 +246,13 @@ public class BasePlayerStats {
          * The attachments (variants) for the enemy.
          */
         @JsonProperty("Attachments")
-        private List<Integer> attachments;
+        private List<Long> attachments;
 
         public long getBaseId() {
             return baseId;
         }
 
-        public List<Integer> getAttachments() {
+        public List<Long> getAttachments() {
             return attachments;
         }
     }
