@@ -20,7 +20,6 @@ import java.util.List;
 public class StatsApiTest {
     private static String apiKey;
 
-    //private static final String PLAYER = "creammaded";
     private static final String PLAYER = "Vercobrixx";
     private static final List<String> MODES = Arrays.asList("warzone", "arena");
 
