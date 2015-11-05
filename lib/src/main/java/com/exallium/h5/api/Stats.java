@@ -2,9 +2,7 @@ package com.exallium.h5.api;
 
 import com.exallium.h5.api.models.stats.matches.Match;
 import com.exallium.h5.api.models.stats.matches.Page;
-import com.exallium.h5.api.models.stats.reports.ArenaPlayerStats;
-import com.exallium.h5.api.models.stats.reports.VersusCarnageReport;
-import com.exallium.h5.api.models.stats.reports.WarzonePlayerStats;
+import com.exallium.h5.api.models.stats.reports.*;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -33,7 +31,7 @@ public interface Stats {
                                          @Query("count") int count);
 
     /**
-     * Retrieves detailed statistics for a match.
+     * Retrieves detailed statistics for an arena match.
      * Some match details are available while the match is in-progress,
      * but the behavior for incomplete matches in undefined.
      *
@@ -45,7 +43,7 @@ public interface Stats {
     Call<VersusCarnageReport<ArenaPlayerStats>> getArenaCarnageReport(@Path("matchId") String matchId);
 
     /**
-     * Retrieves detailed statistics for a match.
+     * Retrieves detailed statistics for a warzone match.
      * Some match details are available while the match is in-progress,
      * but the behavior for incomplete matches in undefined.
      *
@@ -55,4 +53,27 @@ public interface Stats {
      */
     @GET("/stats/h5/warzone/matches/{matchId}")
     Call<VersusCarnageReport<WarzonePlayerStats>> getWarzoneCarnageReport(@Path("matchId") String matchId);
+
+    /**
+     * Retrieves detailed statistics for a custom match.
+     * Some match details are available while the match is in-progress,
+     * but the behavior for incomplete matches in undefined.
+     * @param matchId An ID that uniquely identifies a match.
+     *                Match IDs can be retrieved from the "GET Matches for Player" API.
+     * @return Call object for desired report
+     */
+    @GET("/stats/h5/custom/matches/{matchId}")
+    Call<VersusCarnageReport<VersusPlayerStats>> getCustomCarnageReport(@Path("matchId") String matchId);
+
+    /**
+     * Retrieves detailed statistics for a campaign match.
+     * Some match details are available while the match is in-progress,
+     * but the behavior for incomplete matches in undefined.
+     * @param matchId An ID that uniquely identifies a match.
+     *                Match IDs can be retrieved from the "GET Matches for Player" API.
+     * @return Call object for desired report
+     */
+    @GET("/stats/h5/campaign/matches/{matchId}")
+    Call<CampaignCarnageReport> getCampaignCarnageReport(@Path("matchId") String matchId);
+
 }

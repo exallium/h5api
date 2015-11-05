@@ -2,6 +2,7 @@ package com.exallium.h5.api.models.stats.reports;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class SpartanRankedPlayerStats extends VersusPlayerStats {
@@ -279,30 +280,30 @@ public class SpartanRankedPlayerStats extends VersusPlayerStats {
 
     public static class DataHolder {
         @JsonProperty("Data1")
-        private int data1;
+        private BigInteger data1;
 
         @JsonProperty("Data2")
-        private int data2;
+        private BigInteger data2;
 
         @JsonProperty("Data3")
-        private int data3;
+        private BigInteger data3;
 
         @JsonProperty("Data4")
-        private int data4;
+        private BigInteger data4;
 
-        public int getData1() {
+        public BigInteger getData1() {
             return data1;
         }
 
-        public int getData2() {
+        public BigInteger getData2() {
             return data2;
         }
 
-        public int getData3() {
+        public BigInteger getData3() {
             return data3;
         }
 
-        public int getData4() {
+        public BigInteger getData4() {
             return data4;
         }
     }
