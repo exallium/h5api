@@ -14,6 +14,8 @@ import retrofit.Retrofit
 class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
         setContentView(R.layout.recycler_view)
 
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView) as RecyclerView
