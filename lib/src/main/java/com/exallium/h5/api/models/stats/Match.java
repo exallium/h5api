@@ -1,9 +1,11 @@
 package com.exallium.h5.api.models.stats;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties({"Links"})
 public class Match {
 
     public static class Id {
@@ -30,12 +32,6 @@ public class Match {
         @JsonProperty("ISO8601Date")
         private String date;
     }
-
-    /**
-     * Internal use only. A set of related resource links.
-     */
-    @JsonProperty("Links")
-    private List<String> links;
 
     @JsonProperty("Id")
     private Id id;

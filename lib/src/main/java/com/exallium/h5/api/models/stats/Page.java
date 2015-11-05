@@ -1,9 +1,11 @@
 package com.exallium.h5.api.models.stats;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties({"Links"})
 public class Page<T> {
     /**
      * The starting point that was used. When the "start" query string parameter is
