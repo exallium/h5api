@@ -62,14 +62,14 @@ public class ArenaPlayerStats extends SpartanRankedPlayerStats {
      * the player is still in measurement matches, this field is null. If the player
      * finished the last measurement match this match, this field is still null.
      */
-    @JsonProperty("PreviousCSR")
+    @JsonProperty("PreviousCsr")
     private CSR previousCSR;
 
     /**
      * The Competitive Skill Ranking (CSR) of the player after the match ended. If the
      * player is still in measurement matches, this field is null.
      */
-    @JsonProperty("CurrentCSR")
+    @JsonProperty("CurrentCsr")
     private CSR currentCSR;
 
     /**

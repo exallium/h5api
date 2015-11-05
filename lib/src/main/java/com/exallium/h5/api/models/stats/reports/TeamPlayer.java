@@ -1,7 +1,9 @@
 package com.exallium.h5.api.models.stats.reports;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties({"PreMatchRatings", "PostMatchRatings"})
 public class TeamPlayer {
 
     @JsonProperty("Player")
@@ -63,16 +65,4 @@ public class TeamPlayer {
      */
     @JsonProperty("TotalAssists")
     private int totalAssists;
-
-    /**
-     * Internal use only. This will always be null.
-     */
-    @JsonProperty("PreMatchRatings")
-    private String preMatchRatings;
-
-    /**
-     * Internal use only. This will always be null.
-     */
-    @JsonProperty("PostMatchRatings")
-    private String postMatchRatings;
 }

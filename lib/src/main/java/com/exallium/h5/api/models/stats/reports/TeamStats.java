@@ -2,6 +2,8 @@ package com.exallium.h5.api.models.stats.reports;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class TeamStats {
 
     public static class RoundStats {
@@ -64,7 +66,7 @@ public class TeamStats {
      * The set of round stats for the team.
      */
     @JsonProperty("RoundStats")
-    private RoundStats roundStats;
+    private List<RoundStats> roundStats;
 
     public int getTeamId() {
         return teamId;
@@ -78,7 +80,7 @@ public class TeamStats {
         return rank;
     }
 
-    public RoundStats getRoundStats() {
+    public List<RoundStats> getRoundStats() {
         return roundStats;
     }
 }

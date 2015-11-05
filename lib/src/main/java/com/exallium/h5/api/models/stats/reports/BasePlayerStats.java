@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-@JsonIgnoreProperties({"PreMatchRating", "PostMatchRating"})
+@JsonIgnoreProperties({"PreMatchRatings", "PostMatchRatings"})
 public class BasePlayerStats {
 
     public static class FlexibleStats {
@@ -172,14 +172,15 @@ public class BasePlayerStats {
          * The ID of the weapon. Weapons are available via the Metadata API.
          */
         @JsonProperty("StockId")
-        private int stockId;
+        private long stockId;
 
         /**
          * Any attachments the weapon had.
          */
+        @JsonProperty("Attachments")
         private List<Integer> attachments;
 
-        public int getStockId() {
+        public long getStockId() {
             return stockId;
         }
 
@@ -194,7 +195,7 @@ public class BasePlayerStats {
          * The ID of the Medal. Medals are available via the Metadata API.
          */
         @JsonProperty("MedalId")
-        private int medalId;
+        private long medalId;
 
         /**
          * The number of times the Medal was earned.
@@ -202,7 +203,7 @@ public class BasePlayerStats {
         @JsonProperty("Count")
         private int count;
 
-        public int getMedalId() {
+        public long getMedalId() {
             return medalId;
         }
 
