@@ -240,7 +240,7 @@ public class BasePlayerStats {
          * The Base ID for the enemy.
          */
         @JsonProperty("BaseId")
-        private int baseId;
+        private long baseId;
 
         /**
          * The attachments (variants) for the enemy.
@@ -248,7 +248,7 @@ public class BasePlayerStats {
         @JsonProperty("Attachments")
         private List<Integer> attachments;
 
-        public int getBaseId() {
+        public long getBaseId() {
             return baseId;
         }
 

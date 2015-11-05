@@ -52,8 +52,8 @@ public class StatsApiTest {
         ApiFactory factory = new ApiFactory(apiKey);
         Stats stats = factory.getStats();
         Match match = getMatchByType(stats, "warzone");
-        Response<VersusCarnageReport<WarzonePlayerStats>> arenaReport = stats.getWarzoneCarnageReport(match.getId().getMatchId()).execute();
-        Assert.assertEquals(arenaReport.code(), 200);
+        Response<VersusCarnageReport<WarzonePlayerStats>> warzoneReport = stats.getWarzoneCarnageReport(match.getId().getMatchId()).execute();
+        Assert.assertEquals(warzoneReport.code(), 200);
     }
 
     private Match getMatchByType(Stats stats, String type) throws IOException {
