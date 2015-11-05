@@ -1,4 +1,4 @@
-package com.exallium.h5.api.models.stats;
+package com.exallium.h5.api.models.stats.reports;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -14,4 +14,12 @@ public class Player {
      */
     @JsonProperty("Xuid")
     private String xuid;
+
+    public String getGamertag() {
+        return gamertag;
+    }
+
+    public String getXuid() {
+        return xuid;
+    }
 }

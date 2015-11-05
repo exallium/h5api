@@ -1,10 +1,18 @@
-package com.exallium.h5.api.models.stats;
+package com.exallium.h5.api.models.stats.reports;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 @JsonIgnoreProperties({"SeasonId"})
-public class BaseCarnageReport {
+public class BaseCarnageReport<S extends BasePlayerStats> {
+
+    /**
+     * A list of stats for each player who was present in the match.
+     */
+    @JsonProperty("PlayerStats")
+    private List<S> playerStats;
 
     /**
      * Indicates if the match is completed or not. Some match details are available while
@@ -57,4 +65,40 @@ public class BaseCarnageReport {
      */
     @JsonProperty("IsTeamGame")
     private boolean isTeamGame;
+
+    public List<S> getPlayerStats() {
+        return playerStats;
+    }
+
+    public boolean isMatchOver() {
+        return isMatchOver;
+    }
+
+    public String getTotalDuration() {
+        return totalDuration;
+    }
+
+    public String getMapVariantId() {
+        return mapVariantId;
+    }
+
+    public String getGameVariantId() {
+        return gameVariantId;
+    }
+
+    public String getPlaylistId() {
+        return playlistId;
+    }
+
+    public String getMapId() {
+        return mapId;
+    }
+
+    public String getGameBaseVariantId() {
+        return gameBaseVariantId;
+    }
+
+    public boolean isTeamGame() {
+        return isTeamGame;
+    }
 }

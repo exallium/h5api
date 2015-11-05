@@ -1,4 +1,4 @@
-package com.exallium.h5.api.models.stats;
+package com.exallium.h5.api.models.stats.reports;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -31,4 +31,20 @@ public class Resource {
      */
     @JsonProperty("Owner")
     private String owner;
+
+    public int getResourceType() {
+        return resourceType;
+    }
+
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public String getOwnerType() {
+        return ownerType;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
 }

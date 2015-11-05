@@ -1,7 +1,7 @@
 package com.exallium.h5.api;
 
-import com.exallium.h5.api.models.stats.Match;
-import com.exallium.h5.api.models.stats.Page;
+import com.exallium.h5.api.models.stats.matches.Match;
+import com.exallium.h5.api.models.stats.matches.Page;
 import com.exallium.h5.api.utils.KeyReader;
 import org.junit.Assert;
 import org.junit.BeforeClass;

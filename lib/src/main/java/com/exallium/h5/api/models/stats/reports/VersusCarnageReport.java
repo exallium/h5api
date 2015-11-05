@@ -1,16 +1,10 @@
-package com.exallium.h5.api.models.stats;
+package com.exallium.h5.api.models.stats.reports;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class VersusCarnageReport<S extends BasePlayerStats> extends BaseCarnageReport {
-
-    /**
-     * A list of stats for each player who was present in the match.
-     */
-    @JsonProperty("PlayerStats")
-    private List<S> playerStats;
+public class VersusCarnageReport<S extends VersusPlayerStats> extends BaseCarnageReport<S> {
 
     /**
      * A list of stats for each team who in the match. Note that in Free For All modes,

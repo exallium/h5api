@@ -1,5 +1,8 @@
-package com.exallium.h5.api.models.stats;
+package com.exallium.h5.api.models.stats.matches;
 
+import com.exallium.h5.api.models.stats.reports.Resource;
+import com.exallium.h5.api.models.stats.reports.Team;
+import com.exallium.h5.api.models.stats.reports.TeamPlayer;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -26,11 +29,23 @@ public class Match {
          */
         @JsonProperty("GameMode")
         private int gameMode;
+
+        public String getMatchId() {
+            return matchId;
+        }
+
+        public int getGameMode() {
+            return gameMode;
+        }
     }
 
     public static class CompletedDate {
         @JsonProperty("ISO8601Date")
         private String date;
+
+        public String getDate() {
+            return date;
+        }
     }
 
     @JsonProperty("Id")
@@ -123,4 +138,51 @@ public class Match {
     @JsonProperty("SeasonId")
     private String seasonId;
 
+    public Id getId() {
+        return id;
+    }
+
+    public String getHopperId() {
+        return hopperId;
+    }
+
+    public String getMapId() {
+        return mapId;
+    }
+
+    public Resource getMapVariant() {
+        return mapVariant;
+    }
+
+    public String getGameBaseVariantId() {
+        return gameBaseVariantId;
+    }
+
+    public Resource getGameVariant() {
+        return gameVariant;
+    }
+
+    public String getMatchDuration() {
+        return matchDuration;
+    }
+
+    public CompletedDate getMatchCompletedDate() {
+        return matchCompletedDate;
+    }
+
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public List<TeamPlayer> getPlayers() {
+        return players;
+    }
+
+    public boolean isTeamGame() {
+        return isTeamGame;
+    }
+
+    public String getSeasonId() {
+        return seasonId;
+    }
 }

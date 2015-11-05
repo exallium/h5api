@@ -1,4 +1,4 @@
-package com.exallium.h5.api.models.stats;
+package com.exallium.h5.api.models.stats.matches;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,4 +37,20 @@ public class Page<T> {
      */
     @JsonProperty("Results")
     private List<T> results;
+
+    public int getStart() {
+        return start;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public int getResultCount() {
+        return resultCount;
+    }
+
+    public List<T> getResults() {
+        return results;
+    }
 }
