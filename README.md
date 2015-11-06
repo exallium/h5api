@@ -1,6 +1,6 @@
 # Halo 5 API
 
-WARNING -- Still under heavy development, will be for the forseeable few weeks at least.
+Basic Halo 5 API Wrapper written with Retrofit.
 
 ## Usage
 
