@@ -109,7 +109,7 @@ public interface Metadata {
      * @return A list of game variants for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "game-variants/{id}")
-    Call<List<GameVariant>> getGameVariants(@Path("id") String id);
+    Call<GameVariant> getGameVariant(@Path("id") String id);
 
     /**
      * @return A list of impulses (essentially invisible medals) for the title. There is no
@@ -154,10 +154,10 @@ public interface Metadata {
 
     /**
      * @param id An ID that uniquely identifies a Requisition.
-     * @return A list of requisitions for the title. There is no significance to the ordering.
+     * @return A requisition for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "requisitions/{id}")
-    Call<List<Requisition>> getRequisitions(@Path("id") String id);
+    Call<Requisition> getRequisition(@Path("id") String id);
 
     /**
      * @return A list of skulls for the title. There is no significance to the ordering.
