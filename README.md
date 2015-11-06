@@ -24,10 +24,9 @@ download or populate a bitmap of the source image every time we want a medal's s
 ## Features
 
 * Metadata API (complete)
-* Stats API (reports / player matches complete)
+* Stats API
+* Profile API (grabs 302s)
 
 ## Roadmap
 
-* Service Records (part of Stats API)
-* Profile API
 * Linking Framework (Stats to Metadata linkage)
