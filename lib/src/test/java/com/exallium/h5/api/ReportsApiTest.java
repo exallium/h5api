@@ -4,9 +4,7 @@ import com.exallium.h5.api.models.stats.matches.Match;
 import com.exallium.h5.api.models.stats.matches.Page;
 import com.exallium.h5.api.models.stats.reports.*;
 import com.exallium.h5.api.utils.KeyReader;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import retrofit.Response;
@@ -23,9 +21,26 @@ public class ReportsApiTest {
     private static final String PLAYER = "Vercobrixx";
     private static final List<String> MODES = Arrays.asList("warzone", "arena");
 
+    private long startTime;
+
     @BeforeClass
     public static void setUpClass() {
         apiKey = KeyReader.getApiKey();
+    }
+
+    @Before
+    public void setUp() {
+        startTime = System.currentTimeMillis();
+    }
+
+    @After
+    public void tearDown() throws InterruptedException {
+        long endTime = System.currentTimeMillis();
+        long delta = endTime - startTime;
+        System.out.println(String.format("Test took %d ms", delta));
+        if (delta < 2200) {
+            Thread.sleep(2200 - delta);
+        }
     }
 
     @Test
