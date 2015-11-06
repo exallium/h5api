@@ -1,4 +1,4 @@
-package com.exallium.h5.api.models.stats.reports;
+package com.exallium.h5.api.models.stats.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 @RunWith(JUnit4.class)
-public class StatsApiTest {
+public class ReportsApiTest {
     private static String apiKey;
 
     private static final String PLAYER = "Vercobrixx";

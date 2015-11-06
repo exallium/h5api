@@ -1,5 +1,6 @@
 package com.exallium.h5.api.models.stats.reports;
 
+import com.exallium.h5.api.models.stats.common.Player;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
