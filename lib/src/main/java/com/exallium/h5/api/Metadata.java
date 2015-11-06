@@ -146,10 +146,11 @@ public interface Metadata {
     Call<List<Playlist>> getPlaylists();
 
     /**
-     * @return A list of requisition packs for the title. There is no significance to the ordering.
+     * @param id The unique id of the req pack
+     * @return A Requisition pack for the title. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "requisition-packs/{id}")
-    Call<List<RequisitionPack>> getRequisitionPacks(@Path("id") String id);
+    Call<RequisitionPack> getRequisitionPack(@Path("id") String id);
 
     /**
      * @param id An ID that uniquely identifies a Requisition.

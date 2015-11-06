@@ -57,7 +57,6 @@ import java.util.List;
 public class MetadataApiTest extends BaseTest {
 
     private static String apiKey;
-    private long startTime;
 
     @BeforeClass
     public static void setUpClass() {
