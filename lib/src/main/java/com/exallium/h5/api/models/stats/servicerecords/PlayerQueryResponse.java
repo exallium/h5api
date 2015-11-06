@@ -56,4 +56,16 @@ public class PlayerQueryResponse<T> {
      */
     @JsonProperty("Result")
     private T result;
+
+    public String getId() {
+        return id;
+    }
+
+    public int getResultCode() {
+        return resultCode;
+    }
+
+    public T getResult() {
+        return result;
+    }
 }
