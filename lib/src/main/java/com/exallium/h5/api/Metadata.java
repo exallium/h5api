@@ -42,13 +42,13 @@ public interface Metadata {
     Call<List<Commendation>> getCommendations();
 
     /**
-     * A list of CSR designations for the title. CSR stands for Competitive Skill Rank. CSR
+     * A list of Csr designations for the title. Csr stands for Competitive Skill Rank. Csr
      * is organized into a series of designations, each with a set of tiers within the
      * designation. The designations are: Iron, Bronze, Silver, Gold, Onyx, and Pro. Within
      * each designation are tiers, for example, Bronze 1, Bronze 2, Bronze 3, etc. The Pro
      * designation is special. It has only one tier. For Pro players, we show users a ranking
      * value instead of the tier indicator. For non-Pro players, we keep the absolute skill
-     * ranking hidden and show the CSR tier. To determine what CSR a player has earned, view
+     * ranking hidden and show the Csr tier. To determine what Csr a player has earned, view
      * the Service Record stats for that player. There is no significance to the ordering.
      */
     @GET(PATH_PREFIX + "csr-designations")

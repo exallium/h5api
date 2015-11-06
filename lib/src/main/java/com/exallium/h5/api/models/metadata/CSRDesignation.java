@@ -17,7 +17,7 @@ public class CSRDesignation {
     private String bannerImageUrl;
 
     /**
-     * An array of "CSR Tier" entries, one for each tier this designation supports.
+     * An array of "Csr Tier" entries, one for each tier this designation supports.
      * Semi-Pro and Pro will not have tiers defined, and this list will be empty.
      */
     private List<CSRTier> tiers;
@@ -26,7 +26,7 @@ public class CSRDesignation {
      * An ID that identifies the designation. It happens to be the same as the
      * designation ordering. This value is the same across all languages. Note that Id =
      * 0 indicates the player has an "Unranked" designation. The player must complete
-     * additional matches before being assigned an official CSR designation.
+     * additional matches before being assigned an official Csr designation.
      */
     private long id;
 

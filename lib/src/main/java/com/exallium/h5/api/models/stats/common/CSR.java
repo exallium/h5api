@@ -2,15 +2,15 @@ package com.exallium.h5.api.models.stats.common;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class CSR {
+public class Csr {
     /**
-     * The CSR tier.
+     * The Csr tier.
      */
     @JsonProperty("Tier")
     private int tier;
 
     /**
-     * The Designation of the CSR. Options are:
+     * The Designation of the Csr. Options are:
      * 1 through 5: Normal designations
      * 6 and 7: Semi-pro and Pro respectively
      */
@@ -18,19 +18,19 @@ public class CSR {
     private int designationId;
 
     /**
-     * The CSR value. Zero for normal designations.
+     * The Csr value. Zero for normal designations.
      */
     @JsonProperty("Csr")
     private int csr;
 
     /**
-     * The percentage of progress towards the next CSR tier.
+     * The percentage of progress towards the next Csr tier.
      */
     @JsonProperty("PercentToNextTier")
     private int percentToNextTier;
 
     /**
-     * If the CSR is Semi-pro or Pro, the player's leaderboard ranking.
+     * If the Csr is Semi-pro or Pro, the player's leaderboard ranking.
      */
     @JsonProperty("Rank")
     private int rank;

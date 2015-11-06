@@ -1,7 +1,7 @@
 package com.exallium.h5.api.models.stats.servicerecords;
 
 import com.exallium.h5.api.models.stats.common.BaseStats;
-import com.exallium.h5.api.models.stats.common.CSR;
+import com.exallium.h5.api.models.stats.common.Csr;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -17,23 +17,23 @@ public class ArenaStat extends BaseStats {
 
         /**
          * The player's measurement matches left. If this field is greater than
-         * zero, then the player will not have a CSR yet.
+         * zero, then the player will not have a Csr yet.
          */
         @JsonProperty("MeasurementMatchesLeft")
         private int measurementMatchesLeft;
 
         /**
-         * The highest Competitive Skill Ranking (CSR) achieved by the player. This
-         * is included because a player's CSR can drop based on performance.
+         * The highest Competitive Skill Ranking (Csr) achieved by the player. This
+         * is included because a player's Csr can drop based on performance.
          */
         @JsonProperty("HighestCsr")
-        private CSR highestCsr;
+        private Csr highestCsr;
 
         /**
-         * The current Competitive Skill Ranking (CSR) of the player.
+         * The current Competitive Skill Ranking (Csr) of the player.
          */
         @JsonProperty("Csr")
-        private CSR csr;
+        private Csr csr;
 
         public String getPlaylistId() {
             return playlistId;
@@ -43,11 +43,11 @@ public class ArenaStat extends BaseStats {
             return measurementMatchesLeft;
         }
 
-        public CSR getHighestCsr() {
+        public Csr getHighestCsr() {
             return highestCsr;
         }
 
-        public CSR getCsr() {
+        public Csr getCsr() {
             return csr;
         }
     }
@@ -101,11 +101,11 @@ public class ArenaStat extends BaseStats {
     private List<ArenaPlaylistStats> arenaPlaylistStats;
 
     /**
-     * The highest obtained CSR by the player in arena. If the player hasn't
+     * The highest obtained Csr by the player in arena. If the player hasn't
      * finished measurement matches yet for any playlist, this value is null.
      */
     @JsonProperty("HighestCsrAttained")
-    private CSR highestCsrAttained;
+    private Csr highestCsrAttained;
 
     /**
      * List of arena stats by GameBaseVariant
@@ -122,8 +122,8 @@ public class ArenaStat extends BaseStats {
     private List<VariantRecord> topGameBaseVariants;
 
     /**
-     * The ID for the playlist that pertains to the highest obtained CSR field. If
-     * the CSR is null, so is this field.
+     * The ID for the playlist that pertains to the highest obtained Csr field. If
+     * the Csr is null, so is this field.
      */
     @JsonProperty("HighestCsrPlaylistId")
     private String highestCsrPlaylistId;
@@ -132,7 +132,7 @@ public class ArenaStat extends BaseStats {
         return arenaPlaylistStats;
     }
 
-    public CSR getHighestCsrAttained() {
+    public Csr getHighestCsrAttained() {
         return highestCsrAttained;
     }
 

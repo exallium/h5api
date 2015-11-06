@@ -15,7 +15,7 @@ public class Playlist {
     private String description;
 
     /**
-     * Indicates if a CSR (competitive skill rank) is shown for players who participate
+     * Indicates if a Csr (competitive skill rank) is shown for players who participate
      * in this playlist.
      */
     @JsonProperty("isRanked")
