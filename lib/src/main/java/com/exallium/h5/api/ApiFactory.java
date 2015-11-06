@@ -30,25 +30,37 @@ public class ApiFactory {
     }
 
     private final Retrofit retrofit;
+    private final ApiKeyInterceptor interceptor;
 
     public ApiFactory(String apiKey) {
         retrofit = new Retrofit.Builder()
                 .baseUrl("https://www.haloapi.com")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
-        retrofit.client().interceptors().add(new ApiKeyInterceptor(apiKey));
+        interceptor = new ApiKeyInterceptor(apiKey);
+        retrofit.client().setFollowRedirects(false);
+        retrofit.client().interceptors().add(interceptor);
     }
 
+    /**
+     * @return Metadata Adapter, for all metadata requests.
+     */
     public Metadata getMetadata() {
         return retrofit.create(Metadata.class);
     }
 
-    public Profile getProfile() {
-        return retrofit.create(Profile.class);
-    }
-
+    /**
+     * @return Stats Adapter for Reports, Matches, and Service Records.
+     */
     public Stats getStats() {
         return retrofit.create(Stats.class);
+    }
+
+    /**
+     * @return Profile Adapter for Emblem and Profile Images
+     */
+    public Profile getProfile() {
+        return retrofit.create(Profile.class);
     }
 
 }

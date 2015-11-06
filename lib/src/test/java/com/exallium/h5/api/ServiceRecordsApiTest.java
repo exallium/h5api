@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Collections;
 
 @RunWith(JUnit4.class)
-public class ServiceRecordsApiTest {
+public class ServiceRecordsApiTest extends BaseTest {
 
     private static String apiKey;
 
@@ -22,21 +22,6 @@ public class ServiceRecordsApiTest {
     @BeforeClass
     public static void setUpClass() {
         apiKey = KeyReader.getApiKey();
-    }
-
-    @Before
-    public void setUp() {
-        startTime = System.currentTimeMillis();
-    }
-
-    @After
-    public void tearDown() throws InterruptedException {
-        long endTime = System.currentTimeMillis();
-        long delta = endTime - startTime;
-        System.out.println(String.format("Test took %d ms", delta));
-        if (delta < 1100) {
-            Thread.sleep(1100 - delta);
-        }
     }
 
     @Test
