@@ -3,9 +3,7 @@ package com.exallium.h5.api;
 import com.exallium.h5.api.models.stats.matches.Match;
 import com.exallium.h5.api.models.stats.matches.Page;
 import com.exallium.h5.api.models.stats.reports.*;
-import com.exallium.h5.api.models.stats.servicerecords.ArenaResult;
-import com.exallium.h5.api.models.stats.servicerecords.ServiceRecordCollection;
-import com.exallium.h5.api.models.stats.servicerecords.WarzoneResult;
+import com.exallium.h5.api.models.stats.servicerecords.*;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -94,8 +92,28 @@ public interface Stats {
      * A Service Record contains a player's lifetime statistics in the game mode.
      *
      * @param gamertags A list of gamertags to query service records for
-     * @result Call object for desired service record
+     * @return Call object for desired service record
      */
     @GET("/stats/h5/servicerecords/arena")
     Call<ServiceRecordCollection<ArenaResult>> getArenaServiceRecords(@Query("players") List<String> gamertags);
+
+    /**
+     * Retrieves players' Custom Game Service Records.
+     * A Service Record contains a player's lifetime statistics in the game mode.
+     *
+     * @param gamertags A list of gamertags to query service records for
+     * @return Call object for desired service record
+     */
+    @GET("/stats/h5/servicerecords/custom")
+    Call<ServiceRecordCollection<CustomResult>> getCustomServiceRecords(@Query("players") List<String> gamertags);
+
+    /**
+     * Retrieves players' Campaign Service Records.
+     * A Service Record contains a player's lifetime statistics in the game mode.
+     *
+     * @param gamertags A list of gamertags to query service records for
+     * @return Call object for desired service record
+     */
+    @GET("/stats/h5/servicerecords/campaign")
+    Call<ServiceRecordCollection<CampaignResult>> getCampaignServiceRecords(@Query("players") List<String> gamertags);
 }

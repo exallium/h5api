@@ -1,9 +1,6 @@
 package com.exallium.h5.api;
 
-import com.exallium.h5.api.models.stats.servicerecords.ArenaResult;
-import com.exallium.h5.api.models.stats.servicerecords.ServiceRecordCollection;
-import com.exallium.h5.api.models.stats.servicerecords.WarzoneResult;
-import com.exallium.h5.api.models.stats.servicerecords.WarzoneStat;
+import com.exallium.h5.api.models.stats.servicerecords.*;
 import com.exallium.h5.api.utils.KeyReader;
 import org.junit.*;
 import org.junit.runner.RunWith;
@@ -59,6 +56,28 @@ public class ServiceRecordsApiTest {
         Stats stats = factory.getStats();
         Response<ServiceRecordCollection<ArenaResult>> response = stats
                 .getArenaServiceRecords(Collections.singletonList(PLAYER))
+                .execute();
+
+        Assert.assertEquals(200, response.code());
+    }
+
+    @Test
+    public void testCustomServiceRecord() throws IOException {
+        ApiFactory factory = new ApiFactory(apiKey);
+        Stats stats = factory.getStats();
+        Response<ServiceRecordCollection<CustomResult>> response = stats
+                .getCustomServiceRecords(Collections.singletonList(PLAYER))
+                .execute();
+
+        Assert.assertEquals(200, response.code());
+    }
+
+    @Test
+    public void testCampaignServiceRecord() throws IOException {
+        ApiFactory factory = new ApiFactory(apiKey);
+        Stats stats = factory.getStats();
+        Response<ServiceRecordCollection<CampaignResult>> response = stats
+                .getCampaignServiceRecords(Collections.singletonList(PLAYER))
                 .execute();
 
         Assert.assertEquals(200, response.code());
