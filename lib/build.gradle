@@ -30,6 +30,7 @@ group 'com.exallium'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'com.jfrog.bintray'
 
 sourceCompatibility = 1.7
 
@@ -50,5 +51,32 @@ sourceSets {
         resources {
             srcDir "../secure"
         }
+    }
+}
+
+def siteUrl = 'https://github.com/Exallium/h5api'
+def gitUrl = 'https://github.com/Exallium/h5api.git'
+group = 'com.exallium.h5'
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+}
+
+bintray {
+    user = mavenUser
+    key = binTrayApiKey
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = "com.exallium.h5"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["MIT"]
+        publish = true
     }
 }

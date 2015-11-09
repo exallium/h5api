@@ -33,6 +33,17 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.7
 
+buildscript {
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+    }
+}
+
 repositories {
     mavenCentral()
 }
