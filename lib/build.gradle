@@ -27,9 +27,10 @@
  */
 
 group 'com.exallium'
-version '1.0'
+version '1.1'
 
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.bintray'
 
 sourceCompatibility = 1.7
@@ -58,19 +59,39 @@ def siteUrl = 'https://github.com/Exallium/h5api'
 def gitUrl = 'https://github.com/Exallium/h5api.git'
 group = 'com.exallium.h5'
 
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
 
-artifacts {
-    archives javadocJar
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'com.exallium.h5'
+            artifactId 'lib'
+            version version
+
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+        }
+    }
 }
 
 bintray {
     user = mavenUser
     key = binTrayApiKey
-    configurations = ['archives']
+    publications = ['mavenJava']
     pkg {
         repo = 'maven'
         name = "com.exallium.h5"

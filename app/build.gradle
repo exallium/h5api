@@ -27,7 +27,7 @@
  */
 
 group 'com.exallium'
-version '1.0-SNAPSHOT'
+version '1.1'
 
 buildscript {
     ext.kotlin_version = '1.0.0-beta-1103'
@@ -49,6 +49,9 @@ sourceCompatibility = 1.7
 repositories {
     mavenCentral()
     jcenter()
+    maven {
+        url  "http://dl.bintray.com/exallium/maven"
+    }
 }
 
 android {
@@ -96,5 +99,6 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile 'com.squareup.picasso:picasso:2.5.2'
 
+    //compile 'com.exallium.h5:lib:1.1'
     compile project(":lib")
 }
