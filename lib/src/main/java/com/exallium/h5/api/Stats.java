@@ -51,7 +51,7 @@ public interface Stats {
      * @param modes     warzone, custom, arena, or campaign
      * @param start     Start offset
      * @param count     # results to return
-     * @return
+     * @return Call object for desired report
      */
     @GET("/stats/h5/players/{player}/matches")
     Call<Page<Match>> getRecentMatchInfo(@Path("player") String player,
