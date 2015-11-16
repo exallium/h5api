@@ -28,21 +28,7 @@
 
 package com.exallium.h5.api;
 
-import com.exallium.h5.api.models.metadata.CSRDesignation;
-import com.exallium.h5.api.models.metadata.CampaignMission;
-import com.exallium.h5.api.models.metadata.Commendation;
-import com.exallium.h5.api.models.metadata.Enemy;
-import com.exallium.h5.api.models.metadata.FlexibleStat;
-import com.exallium.h5.api.models.metadata.GameBaseVariant;
-import com.exallium.h5.api.models.metadata.GameVariant;
-import com.exallium.h5.api.models.metadata.Map;
-import com.exallium.h5.api.models.metadata.Medal;
-import com.exallium.h5.api.models.metadata.Playlist;
-import com.exallium.h5.api.models.metadata.Skull;
-import com.exallium.h5.api.models.metadata.SpartanRank;
-import com.exallium.h5.api.models.metadata.TeamColor;
-import com.exallium.h5.api.models.metadata.Vehicle;
-import com.exallium.h5.api.models.metadata.Weapon;
+import com.exallium.h5.api.models.metadata.*;
 import com.exallium.h5.api.utils.Constants;
 import com.exallium.h5.api.utils.KeyReader;
 import org.junit.*;
@@ -155,7 +141,7 @@ public class MetadataApiTest extends BaseTest {
     public void testImpulses() throws IOException {
         ApiFactory factory = new ApiFactory(apiKey);
         Metadata metadata = factory.getMetadata();
-        Response<List<GameVariant>> impulses = metadata.getImpulses().execute();
+        Response<List<Impulse>> impulses = metadata.getImpulses().execute();
         Assert.assertEquals(200, impulses.code());
     }
 

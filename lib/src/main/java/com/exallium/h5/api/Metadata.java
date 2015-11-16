@@ -28,24 +28,7 @@
 
 package com.exallium.h5.api;
 
-import com.exallium.h5.api.models.metadata.CSRDesignation;
-import com.exallium.h5.api.models.metadata.CampaignMission;
-import com.exallium.h5.api.models.metadata.Commendation;
-import com.exallium.h5.api.models.metadata.Enemy;
-import com.exallium.h5.api.models.metadata.FlexibleStat;
-import com.exallium.h5.api.models.metadata.GameBaseVariant;
-import com.exallium.h5.api.models.metadata.GameVariant;
-import com.exallium.h5.api.models.metadata.Map;
-import com.exallium.h5.api.models.metadata.MapVariant;
-import com.exallium.h5.api.models.metadata.Medal;
-import com.exallium.h5.api.models.metadata.Playlist;
-import com.exallium.h5.api.models.metadata.Requisition;
-import com.exallium.h5.api.models.metadata.RequisitionPack;
-import com.exallium.h5.api.models.metadata.Skull;
-import com.exallium.h5.api.models.metadata.SpartanRank;
-import com.exallium.h5.api.models.metadata.TeamColor;
-import com.exallium.h5.api.models.metadata.Vehicle;
-import com.exallium.h5.api.models.metadata.Weapon;
+import com.exallium.h5.api.models.metadata.*;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Path;
@@ -116,7 +99,7 @@ public interface Metadata {
      * significance to the ordering.
      */
     @GET(PATH_PREFIX + "impulses")
-    Call<List<GameVariant>> getImpulses();
+    Call<List<Impulse>> getImpulses();
 
     /**
      * @param id Unique Map Variant ID
