@@ -56,4 +56,15 @@ public class Team {
     @JsonProperty("Rank")
     private int rank;
 
+    public int getId() {
+        return id;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getRank() {
+        return rank;
+    }
 }

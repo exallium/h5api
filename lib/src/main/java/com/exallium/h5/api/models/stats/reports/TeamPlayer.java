@@ -94,4 +94,32 @@ public class TeamPlayer {
      */
     @JsonProperty("TotalAssists")
     private int totalAssists;
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public int getTeamId() {
+        return teamId;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public int getResult() {
+        return result;
+    }
+
+    public int getTotalKills() {
+        return totalKills;
+    }
+
+    public int getTotalDeaths() {
+        return totalDeaths;
+    }
+
+    public int getTotalAssists() {
+        return totalAssists;
+    }
 }
