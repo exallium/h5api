@@ -48,4 +48,12 @@ public class CustomStat extends BaseStats {
      */
     @JsonProperty("TopGameBaseVariants")
     private List<VariantRecord> topGameBaseVariants;
+
+    public List<GameBaseVariantStats> getCustomGameBaseVariantStats() {
+        return customGameBaseVariantStats;
+    }
+
+    public List<VariantRecord> getTopGameBaseVariants() {
+        return topGameBaseVariants;
+    }
 }
