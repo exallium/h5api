@@ -47,8 +47,8 @@ import java.util.List;
 public class ReportsApiTest extends BaseTest {
     private static String apiKey;
 
-    private static final String PLAYER = "Vercobrixx";
-    private static final String MODES = "warzone,arena";
+    private static final String PLAYER = "CreamMaded";
+    private static final String MODES = "warzone,arena,custom";
 
     {
         setTimeout(Constants.TIMEOUT * 2);

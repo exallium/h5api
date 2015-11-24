@@ -41,13 +41,13 @@ public class CampaignPlayerStats extends BasePlayerStats {
      * The player's score.
      */
     @JsonProperty("Score")
-    private int score;
+    private long score;
 
     public int getBiggestKillScore() {
         return biggestKillScore;
     }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 }

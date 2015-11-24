@@ -48,7 +48,7 @@ public class Team {
      *   Warzone = number of points.
      */
     @JsonProperty("Score")
-    private int score;
+    private long score;
 
     /**
      * The team's rank at the end of the match.
@@ -60,7 +60,7 @@ public class Team {
         return id;
     }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 

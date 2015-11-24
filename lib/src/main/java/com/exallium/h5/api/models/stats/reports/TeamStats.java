@@ -51,7 +51,7 @@ public class TeamStats {
          * The end score for the team this round.
          */
         @JsonProperty("Score")
-        private int score;
+        private long score;
 
         public int getRoundNumber() {
             return roundNumber;
@@ -61,7 +61,7 @@ public class TeamStats {
             return rank;
         }
 
-        public int getScore() {
+        public long getScore() {
             return score;
         }
     }
@@ -82,7 +82,7 @@ public class TeamStats {
      *  Warzone = number of points.
      */
     @JsonProperty("Score")
-    private int score;
+    private long score;
 
     /**
      * The team's rank at the end of the match.
@@ -100,7 +100,7 @@ public class TeamStats {
         return teamId;
     }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 
