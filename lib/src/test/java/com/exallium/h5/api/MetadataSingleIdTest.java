@@ -150,7 +150,7 @@ public class MetadataSingleIdTest extends BaseTest {
     private Match getMatchByType(Stats stats, String type) throws IOException {
         Response<Page<Match>> response = stats.getRecentMatchInfo(
                 Constants.PLAYER,
-                Collections.singletonList(type),
+                type,
                 0,
                 1).execute();
 

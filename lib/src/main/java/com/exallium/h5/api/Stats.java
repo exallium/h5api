@@ -48,14 +48,14 @@ public interface Stats {
      * appear in this list within a minute of the match ending.
      *
      * @param player    The Player's gamertag.
-     * @param modes     warzone, custom, arena, or campaign
+     * @param modes     combination of warzone, custom, arena, or campaign
      * @param start     Start offset
      * @param count     # results to return
      * @return Call object for desired report
      */
     @GET("/stats/h5/players/{player}/matches")
     Call<Page<Match>> getRecentMatchInfo(@Path("player") String player,
-                                         @Query("modes") List<String> modes,
+                                         @Query("modes") String modes,
                                          @Query("start") int start,
                                          @Query("count") int count);
 
@@ -113,7 +113,7 @@ public interface Stats {
      * @return Call object for desired service record
      */
     @GET("/stats/h5/servicerecords/warzone")
-    Call<ServiceRecordCollection<WarzoneResult>> getWarzoneServiceRecords(@Query("players") List<String> gamertags);
+    Call<ServiceRecordCollection<WarzoneResult>> getWarzoneServiceRecords(@Query("players") String gamertags);
 
     /**
      * Retrieves players' Arena Service Records.
@@ -123,7 +123,7 @@ public interface Stats {
      * @return Call object for desired service record
      */
     @GET("/stats/h5/servicerecords/arena")
-    Call<ServiceRecordCollection<ArenaResult>> getArenaServiceRecords(@Query("players") List<String> gamertags);
+    Call<ServiceRecordCollection<ArenaResult>> getArenaServiceRecords(@Query("players") String gamertags);
 
     /**
      * Retrieves players' Custom Game Service Records.
@@ -133,7 +133,7 @@ public interface Stats {
      * @return Call object for desired service record
      */
     @GET("/stats/h5/servicerecords/custom")
-    Call<ServiceRecordCollection<CustomResult>> getCustomServiceRecords(@Query("players") List<String> gamertags);
+    Call<ServiceRecordCollection<CustomResult>> getCustomServiceRecords(@Query("players") String gamertags);
 
     /**
      * Retrieves players' Campaign Service Records.
@@ -143,5 +143,5 @@ public interface Stats {
      * @return Call object for desired service record
      */
     @GET("/stats/h5/servicerecords/campaign")
-    Call<ServiceRecordCollection<CampaignResult>> getCampaignServiceRecords(@Query("players") List<String> gamertags);
+    Call<ServiceRecordCollection<CampaignResult>> getCampaignServiceRecords(@Query("players") String gamertags);
 }

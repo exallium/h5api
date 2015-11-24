@@ -45,8 +45,6 @@ public class ServiceRecordsApiTest extends BaseTest {
 
     private static final String PLAYER = "Vercobrixx";
 
-    private long startTime;
-
     @BeforeClass
     public static void setUpClass() {
         apiKey = KeyReader.getApiKey();
@@ -57,7 +55,7 @@ public class ServiceRecordsApiTest extends BaseTest {
         ApiFactory factory = new ApiFactory(apiKey);
         Stats stats = factory.getStats();
         Response<ServiceRecordCollection<WarzoneResult>> response = stats
-                .getWarzoneServiceRecords(Collections.singletonList(PLAYER))
+                .getWarzoneServiceRecords(PLAYER)
                 .execute();
 
         Assert.assertEquals(200, response.code());
@@ -68,7 +66,7 @@ public class ServiceRecordsApiTest extends BaseTest {
         ApiFactory factory = new ApiFactory(apiKey);
         Stats stats = factory.getStats();
         Response<ServiceRecordCollection<ArenaResult>> response = stats
-                .getArenaServiceRecords(Collections.singletonList(PLAYER))
+                .getArenaServiceRecords(PLAYER)
                 .execute();
 
         Assert.assertEquals(200, response.code());
@@ -79,7 +77,7 @@ public class ServiceRecordsApiTest extends BaseTest {
         ApiFactory factory = new ApiFactory(apiKey);
         Stats stats = factory.getStats();
         Response<ServiceRecordCollection<CustomResult>> response = stats
-                .getCustomServiceRecords(Collections.singletonList(PLAYER))
+                .getCustomServiceRecords(PLAYER)
                 .execute();
 
         Assert.assertEquals(200, response.code());
@@ -90,7 +88,7 @@ public class ServiceRecordsApiTest extends BaseTest {
         ApiFactory factory = new ApiFactory(apiKey);
         Stats stats = factory.getStats();
         Response<ServiceRecordCollection<CampaignResult>> response = stats
-                .getCampaignServiceRecords(Collections.singletonList(PLAYER))
+                .getCampaignServiceRecords(PLAYER)
                 .execute();
 
         Assert.assertEquals(200, response.code());

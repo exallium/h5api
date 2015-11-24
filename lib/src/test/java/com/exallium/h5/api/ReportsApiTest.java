@@ -48,7 +48,7 @@ public class ReportsApiTest extends BaseTest {
     private static String apiKey;
 
     private static final String PLAYER = "Vercobrixx";
-    private static final List<String> MODES = Arrays.asList("warzone", "arena");
+    private static final String MODES = "warzone,arena";
 
     {
         setTimeout(Constants.TIMEOUT * 2);
@@ -106,7 +106,7 @@ public class ReportsApiTest extends BaseTest {
     private Match getMatchByType(Stats stats, String type) throws IOException {
         Response<Page<Match>> response = stats.getRecentMatchInfo(
                 PLAYER,
-                Collections.singletonList(type),
+                type,
                 0,
                 1).execute();
 
