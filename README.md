@@ -4,7 +4,7 @@ Basic Halo 5 API Wrapper written with Retrofit.
 
 ## Usage
 
-See Unit tests and Sample App for examples.
+See [Unit Tests](https://github.com/exallium/h5api/tree/master/lib/src/test/java/com/exallium/h5/api) and Sample App for examples.
 
 ## Testing Lib and Running Sample App
 
